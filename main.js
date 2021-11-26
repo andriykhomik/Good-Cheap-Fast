@@ -5,22 +5,19 @@ const fast = document.querySelector('#fast');
 
 toggles.forEach(toggle=> {
     console.log (toggle.value);
-    toggle.addEventListener('change', (e)=> {
-        doTheTrick(e.target.id);
-    })
+    toggle.addEventListener('change', (e)=> doTheTrick(e.target));
 })
 
 function doTheTrick(theClickedOne){
-    if (good.checked && cheap.checked && theClickedOne === 'fast'){
-        good.checked = !good.checked;
-        theClickedOne.checked = true;
-    }
-    if (good.checked && fast.checked && theClickedOne === 'cheap'){
-        fast.checked = !fast.checked;
-        theClickedOne.checked = true;
-    }
-    if (cheap.checked && fast.checked && theClickedOne === 'good'){
-        cheap.checked = !cheap.checked;
-        theClickedOne.checked = true;
+    if (good.checked && cheap.checked && fast.checked ){
+        if (good === theClickedOne){
+            fast.checked = false;
+        }
+        if (cheap === theClickedOne){
+            good.checked = false;
+        }
+        if (fast === theClickedOne){
+            cheap.checked = false;
+        }
     }
 }

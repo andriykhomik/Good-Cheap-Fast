@@ -22,6 +22,10 @@ body{
     width: 200px;
 }
 
+.toggle-container span{
+    font-weight: bold;
+}
+
 .toggle{
     visibility: hidden;
 }
