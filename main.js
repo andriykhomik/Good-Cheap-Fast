@@ -4,7 +4,6 @@ const cheap = document.querySelector('#cheap');
 const fast = document.querySelector('#fast');
 
 toggles.forEach(toggle=> {
-    console.log (toggle.value);
     toggle.addEventListener('change', (e)=> doTheTrick(e.target));
 })
 
